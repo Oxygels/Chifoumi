@@ -1,0 +1,51 @@
+@font-face {
+	src: url('fonts/arcade.ttf');
+}
+
+.label {
+	-fx-font-size: 30pt;
+	-fx-font-family: 'ArcadeClassic';
+	-fx-font-style: italic;
+	-fx-text-fill: white;
+}
+
+.menuBar > .button {
+	-fx-background-color: transparent;
+}
+
+.selectionBar > .button {
+	-fx-background-image: url('img/button_bg.png');
+	-fx-background-size: stretch;
+}
+.menuBar, .selectionBar {
+	-fx-background-color: linear-gradient(to bottom right, white , lightgrey 80%); 
+	-fx-border-color: black;
+	-fx-border-style: dashed;
+	-fx-border-width: 2;
+}
+
+.score {
+	-fx-font-size: 70pt;
+}
+
+.selectionBar > .label {
+	-fx-font-size: 20 pt;
+	-fx-text-fill: black;
+}
+
+.playerName {
+	-fx-background-color: red;
+}
+
+.CPUName {
+	-fx-background-color: #4472C4;
+}
+
+.resultLabel {
+	-fx-background-color: #4472C4;
+}
+
+#gridRoot {
+	-fx-background-image: url("img/background/0.jpg");
+	-fx-background-size: stretch;
+}
