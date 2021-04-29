@@ -1,0 +1,50 @@
+@font-face {
+	src: url("../Arcadeclassic.ttf");
+}
+
+*{
+	 -fx-font-family: 'ArcadeClassic';
+	 -fx-font-weight: bold;
+	
+}
+
+#VBOX{
+	 -fx-background-image: url("../arriereplan/montagnes.png");
+	 /*-fx-background-size: contain;*/
+	 /*-fx-background-repeat: no-repeat;*/
+	 -fx-background-size: stretch;
+	 
+}
+
+#vboxfils{
+	 -fx-font-size: 99px;
+	 /*-fx-text-fill: #b1eb54 ;  ne veut pas marcher */
+}
+ 
+#lb1
+{
+	-fx-text-fill: #b1eb54 ;
+}
+
+#lb2
+{
+	-fx-text-fill: #b1eb54 ;
+}
+
+#lb3
+{
+	-fx-text-fill: #b1eb54 ;
+}
+	  
+.button{
+	-fx-text-fill: #ebb434 ;
+	 /*-fx-font-weight: bold;*/
+	 -fx-font-size: 31px;
+	  -fx-background-color: transparent;
+}
+
+.button:hover{
+	/*-fx-cursor: crosshair  ;*/
+	-fx-cursor: hand ;
+	-fx-background-color: #ebdde6;
+}

@@ -8,7 +8,7 @@ public class Jeu
 		boolean fin, quitterJeu;
 		String reponse, texte;
 		
-		//pour gérer le jeu
+		//pour gï¿½rer le jeu
 		GestionJeu jeu = new GestionJeu();
 		
 		quitterJeu = false;
@@ -27,10 +27,10 @@ public class Jeu
 					jeu.set_nombreJoueur(Integer.parseInt(texte));
 				}while ((texte.length() != 1) || (jeu.get_nombreJoueur() <0) || (jeu.get_nombreJoueur()>3));
 				if (jeu.get_nombreJoueur() == 3)
-					//le joueur a donné 3: il faut arrêter le jeu
+					//le joueur a donne 3: il faut arreter le jeu
 					fin = true;
 				else
-				{  //choix aléatoire du nombre de l'ordinateur : 0, 1 ou 2
+				{  //choix alï¿½atoire du nombre de l'ordinateur : 0, 1 ou 2
 					jeu.ChoixOrdinateur();
 					System.out.println("nbord = " + jeu.get_nombreOrdi());
 					jeu.CaculerPoints();
@@ -40,7 +40,7 @@ public class Jeu
 			}
 			while (!jeu.Gagnant() && (!fin));
 
-			//le jeu s'arrête: affichage du résultat
+			//le jeu s'arrete: affichage du resultat
 			if (! fin) 
 				if (jeu.JoueurGagne())
 					System.out.println("Bravo, vous avez atteint 10 points");
@@ -51,7 +51,7 @@ public class Jeu
 			else if (jeu.get_pointsJoueur() > jeu.get_pointsOrdi()) 
 				System.out.println("Bravo, vous avez plus de points que l'ordinateur!");
 			else
-				System.out.println("Egalité!");
+				System.out.println("Egalitï¿½!");
 		    
 			//on demande au joueur s'il veut faire une autre partie
 			System.out.println("Voulez-vous rejouer (o pour oui)?");
