@@ -1,0 +1,24 @@
+@font-face {
+	src: url("../arcade_dashed.ttf");
+}
+
+@font-face {
+    src: url("../arcade.ttf");
+}
+
+.myGrid {
+	-fx-background-image: url("../background/nuit.png");
+	-fx-background-size: stretch;
+}
+
+.contact {
+	-fx-font-size: 50px;
+	-fx-text-fill: yellow;
+	-fx-font-family: 'arcade_dashed';
+}
+
+.numeroDuSupport, .num {
+	-fx-font-size: 30px;
+	-fx-text-fill: orange;
+	-fx-font-family: 'arcade';
+}
