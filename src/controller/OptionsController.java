@@ -1,5 +1,5 @@
-package application;
+package controller;
 
-public class controleurOptions {
+public class OptionsController {
 
 }

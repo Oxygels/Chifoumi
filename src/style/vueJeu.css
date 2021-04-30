@@ -1,7 +1,6 @@
 @font-face {
-	src: url('fonts/arcade.ttf');
+	src: url("../../fonts/arcade.ttf");
 }
-
 .label {
 	-fx-font-size: 30pt;
 	-fx-font-family: 'ArcadeClassic';
@@ -14,7 +13,7 @@
 }
 
 .selectionBar > .button {
-	-fx-background-image: url('img/button_bg.png');
+	-fx-background-image: url('../../img/icon/button_bg.png');
 	-fx-background-size: stretch;
 }
 .menuBar, .selectionBar {
@@ -46,6 +45,6 @@
 }
 
 #gridRoot {
-	-fx-background-image: url("img/background/0.jpg");
+	-fx-background-image: url("../../img/background/0.jpg");
 	-fx-background-size: stretch;
 }

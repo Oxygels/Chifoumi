@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane fx:id="gridRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="gridRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/vueJeu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.JeuController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="239.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="630.0" minWidth="10.0" prefWidth="580.0" />
@@ -47,7 +47,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/plus.png" />
+                        <Image url="@../../img/icon/plus.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -56,7 +56,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/gear.png" />
+                        <Image url="@../../img/icon/gear.png" />
                      </image>
                      <viewport>
                         <Rectangle2D />
@@ -68,7 +68,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/speaking_head.png" />
+                        <Image url="@../../img/icon/speaking_head.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -77,7 +77,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/door.png" />
+                        <Image url="@../../img/icon/door.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -100,7 +100,7 @@
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/rock%20(Personnalisé)%20(1).png" />
+                        <Image url="@../../img/icon/rock.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -109,7 +109,7 @@
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/paper.png" />
+                        <Image url="@../../img/icon/paper1.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -118,7 +118,7 @@
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/scissors1.png" />
+                        <Image url="@../../img/icon/scissors.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -133,12 +133,12 @@
       </VBox>
       <ImageView fitHeight="258.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <image>
-            <Image url="@img/right-facing-fist_1f91c.png" />
+            <Image url="@../../img/icon/right-facing-fist_1f91c.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="258.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <image>
-            <Image url="@img/left-facing-fist_1f91b.png" />
+            <Image url="@../../img/icon/left-facing-fist_1f91b.png" />
          </image>
       </ImageView>
    </children>

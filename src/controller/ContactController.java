@@ -1,5 +1,5 @@
-package application;
+package controller;
 
-public class controleurContact {
+public class ContactController {
 
 }

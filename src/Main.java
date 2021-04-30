@@ -1,5 +1,3 @@
-
-	
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,13 +9,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("view/vueMenu.fxml"));
 			Scene scene = new Scene(root);
-			
-			 
-		      //Setting the font
-			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(true);

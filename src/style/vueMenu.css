@@ -1,5 +1,5 @@
 @font-face {
-	src: url("../Arcadeclassic.ttf");
+	src: url("../../fonts/arcade.ttf");
 }
 
 *{
@@ -9,7 +9,7 @@
 }
 
 #VBOX{
-	 -fx-background-image: url("../arriereplan/montagnes.png");
+	 -fx-background-image: url("../../img/background/montagnes.png");
 	 /*-fx-background-size: contain;*/
 	 /*-fx-background-repeat: no-repeat;*/
 	 -fx-background-size: stretch;

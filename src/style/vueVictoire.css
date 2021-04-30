@@ -1,8 +1,9 @@
 /*@charset "UTF-8";       victoire.css  */
 
 @font-face {
-    src: url("../Arcadeclassic.ttf");
+	src: url("../../fonts/arcade.ttf");
 }
+
 .lb1{
     -fx-font-family: 'ArcadeClassic';
      -fx-font-size: 150px;
@@ -11,7 +12,7 @@
 }
 
 .VBOX{
-     -fx-background-image: url("../arriereplan/aube.png");
+     -fx-background-image: url("../../img/background/aube.png");
      /*-fx-background-size: contain;*/
      /*-fx-background-repeat: no-repeat;*/
      /*-fx-background-size: cover;*/
