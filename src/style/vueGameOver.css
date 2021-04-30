@@ -1,0 +1,22 @@
+/*@charset "UTF-8";*/
+
+@font-face {
+	src: url("../Arcadeclassic.ttf");
+}
+
+#VBOX{
+	 -fx-background-image: url("../arriereplan/soir.png");
+	 -fx-background-size: contain;
+	 /*-fx-background-repeat: no-repeat;*/
+	 /*-fx-background-size: cover;*/
+	 -fx-background-size: stretch;
+}
+
+
+
+#lb1{
+	 -fx-font-family: 'ArcadeClassic';
+	 -fx-font-weight: bold;
+	 -fx-font-size: 180px;
+	-fx-text-fill: black ; 
+}
