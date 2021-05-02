@@ -1,3 +1,4 @@
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,11 +10,13 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			
 			Parent root = FXMLLoader.load(getClass().getResource("view/vueMenu.fxml"));
 			Scene scene = new Scene(root);
 			
 			primaryStage.setScene(scene);
-			primaryStage.setResizable(true);
+			primaryStage.setTitle("JEU PIERRE FEUILLE CISEAUX");
+			//primaryStage.setResizable(true);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

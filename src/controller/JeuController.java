@@ -1,5 +1,8 @@
 package controller;
 
-public class JeuController {
+import javafx.stage.Stage;
 
+public class JeuController {
+	
+	
 }

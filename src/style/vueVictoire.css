@@ -19,9 +19,18 @@
      -fx-background-size: stretch;
 }
 
-.HBOX{
+#HBOX2 {
     -fx-background-color: linear-gradient(to bottom right, white , lightgrey 80%); 
     -fx-border-color: black;
     -fx-border-style: dashed;
     -fx-border-width: 2;
+}
+
+.button {
+	-fx-background-color: transparent;
+}
+.button:hover{
+	/*-fx-cursor: crosshair  ;*/
+	-fx-cursor: hand ;
+	/*-fx-background-color: #ebdde6;*/
 }

@@ -1,21 +1,37 @@
 package controller;
-/*
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-*/
-public class NouvellePartieController {
-/*
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
-	}
+import javafx.scene.control.RadioButton;
 
-	@FXML public void nouvellePartie(ActionEvent e) {
-		System.out.println(" Nouvelle Partie");
-	}*/
+public class NouvellePartieController {
+
+	@FXML private RadioButton _button;
+	
+	@FXML private boolean estSelect=false;
+	
+	@FXML public void selection(ActionEvent e)
+	{
+		if(_button.isSelected())
+		{
+			estSelect = true;
+			
+		}
+		else {
+			estSelect=false;
+			
+		}
+	}
+	
+	public Boolean buttonOK()
+	{
+		
+		return estSelect;
+	}
+	
+	public Boolean buttonCancel()
+	{
+		return false;
+	}
+	
 }
