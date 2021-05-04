@@ -12,13 +12,20 @@
 }
 
 .contact {
-	-fx-font-size: 50px;
-	-fx-text-fill: yellow;
+	-fx-font-size: 55px;
+	-fx-text-fill: #ffff00;
 	-fx-font-family: 'Arcade Classic';
 }
 
 .numeroDuSupport, .num {
 	-fx-font-size: 30px;
-	-fx-text-fill: orange;
+	-fx-text-fill: #ff8000;
 	-fx-font-family: 'ArcadeClassic';
+}
+
+.num {
+	-fx-background-color: rgba(96, 100, 136, 0.5); 
+    -fx-border-color: #ffff00;
+    -fx-border-style: dashed;
+    -fx-border-width: 2;
 }
