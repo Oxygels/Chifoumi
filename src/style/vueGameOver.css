@@ -1,23 +1,19 @@
-/*@charset "UTF-8";*/
-
 @font-face {
 	src: url("../../fonts/arcade.ttf");
 }
 
-#VBOX{
-	 -fx-background-image: url("../../img/background/soir.png");
-	 /*-fx-background-repeat: no-repeat;*/
-	 /*-fx-background-size: cover;*/
-	 -fx-background-size: stretch;
+#VBOX {
+	-fx-background-image: url("../../img/background/soir.png");
+	-fx-background-size: stretch;
 }
 
 
 
-#lb1{
-	 -fx-font-family: 'ArcadeClassic';
-	 -fx-font-weight: bold;
-	 -fx-font-size: 180px;
-	 -fx-text-fill: black ; 
+#lb1 {
+	-fx-font-family: 'ArcadeClassic';
+	-fx-font-weight: bold;
+	-fx-font-size: 180px;
+	-fx-text-fill: black; 
 }
 
 #HBOX2 {
@@ -30,8 +26,6 @@
 .button {
 	-fx-background-color: transparent;
 }
-.button:hover{
-	/*-fx-cursor: crosshair  ;*/
-	-fx-cursor: hand ;
-	/*-fx-background-color: #ebdde6;*/
+.button:hover {
+	-fx-cursor: hand;
 }

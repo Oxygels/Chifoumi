@@ -134,7 +134,7 @@ public class MenuController  {
 		GridPane grille;
 		try {
 			Dialog<Integer> dialog = new Dialog<>(); // Dialog<String> veut dire que ça renvoi un int quand ca se ferme
-			dialog.setTitle("CONACT DE SUPPORT");
+			dialog.setTitle("CONTACT DE SUPPORT");
 			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/vueContact.fxml"));
 			

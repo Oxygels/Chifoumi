@@ -23,7 +23,7 @@
 	-fx-font-family: 'ArcadeClassic';
 }
 
-.myOtherGrid {
+.myOtherGrid, .textArea {
 	-fx-background-color: rgba(96, 100, 136, 0.5);
     -fx-border-color: #ffff00;
     -fx-border-style: dashed;
