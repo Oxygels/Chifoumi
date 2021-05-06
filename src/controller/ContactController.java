@@ -3,8 +3,9 @@ package controller;
 import application.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import utils.IStylizable;
 
-public class ContactController {
+public class ContactController implements IStylizable {
 	@FXML
 	private Label _lContact;
 	@FXML
@@ -17,14 +18,9 @@ public class ContactController {
 
 	}
 
-	public void setStyle() {
+	public void updateStyle() {
+		_lContact.getScene();
 		switch (Main.appOption.getFontSize()) {
-		case Grand: {
-			_lContact.setStyle("-fx-font-size: 70px;");
-			_lSupp.setStyle("-fx-font-size: 50px;");
-			_lNum.setStyle("-fx-font-size: 50px;");
-			break;
-		}
 		case Moyen: {
 			_lContact.setStyle("-fx-font-size: 50px;");
 			_lSupp.setStyle("-fx-font-size: 40px;");
@@ -38,9 +34,9 @@ public class ContactController {
 			break;
 		}
 		default: {
-			_lContact.setStyle("-fx-font-size: 40px;");
-			_lSupp.setStyle("-fx-font-size: 30px;");
-			_lNum.setStyle("-fx-font-size: 30px;");
+			_lContact.setStyle("-fx-font-size: 70px;");
+			_lSupp.setStyle("-fx-font-size: 50px;");
+			_lNum.setStyle("-fx-font-size: 50px;");
 			break;
 		}
 

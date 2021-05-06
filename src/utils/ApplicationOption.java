@@ -3,11 +3,11 @@ package utils;
 public class ApplicationOption {
 
 	private String pseudo = "PSEUDO";
-	private int resolutionW = 1920;
-	private int resolutionH = 1080;
+	private int resolutionW = 1280;
+	private int resolutionH = 720;
 	private boolean isFullscreen = false;
 	private BackgroundStyle bgStyle = BackgroundStyle.Zen;
-	private FontStyle fontSize = FontStyle.Petit;
+	private FontStyle fontSize = FontStyle.Grand;
 	private int maxWRound = 10;
 
 	public String getPseudo() {

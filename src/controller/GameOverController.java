@@ -10,14 +10,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import utils.IStylizable;
 
-public class GameOverController implements Initializable {
+public class GameOverController implements IStylizable {
 
 	MenuController menuC = new MenuController(false);
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+	public void initialize() {
 
 	}
 
@@ -28,7 +27,7 @@ public class GameOverController implements Initializable {
 
 	@FXML
 	public void optionsMenu(ActionEvent e) {
-		menuC.optionsMenu(e);
+		menuC.optionsMenuWithUpdate(e, this);
 	}
 
 	@FXML
@@ -48,6 +47,12 @@ public class GameOverController implements Initializable {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+	}
+
+	@Override
+	public void updateStyle() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

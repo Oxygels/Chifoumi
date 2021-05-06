@@ -10,11 +10,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import utils.IStylizable;
 
-public class VictoireController implements Initializable {
+public class VictoireController implements IStylizable {
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize() {
 
 	}
 
@@ -28,7 +28,7 @@ public class VictoireController implements Initializable {
 
 	@FXML
 	public void optionsMenu(ActionEvent e) {
-		menuC.optionsMenu(e);
+		menuC.optionsMenuWithUpdate(e, this);
 	}
 
 	@FXML
@@ -48,6 +48,11 @@ public class VictoireController implements Initializable {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+	}
+
+	@Override
+	public void updateStyle() {
+		
 	}
 
 }

@@ -2,9 +2,8 @@
 	src: url("../../fonts/arcade.ttf");
 }
 .label {
-	-fx-font-size: 30pt;
+	-fx-font-size: 40px;
 	-fx-font-family: 'ArcadeClassic';
-	-fx-font-style: italic;
 	-fx-text-fill: white;
 }
 
@@ -24,11 +23,15 @@
 }
 
 .score {
-	-fx-font-size: 70pt;
+	-fx-font-size: 100px;
+	-fx-background-color: rgba(96, 100, 136, 0.5); 
+    -fx-border-color: #ffff00;
+    -fx-border-style: dashed;
+    -fx-border-width: 2;
 }
 
 .selectionBar > .label {
-	-fx-font-size: 20 pt;
+	-fx-font-size: 20 px;
 	-fx-text-fill: black;
 }
 
@@ -45,6 +48,6 @@
 }
 
 .gridRoot {
-	-fx-background-image: url("../../img/background/0.jpg");
+
 	-fx-background-size: stretch;
 }
