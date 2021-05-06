@@ -3,48 +3,30 @@
 }
 
 *{
-	 -fx-font-family: 'ArcadeClassic';
-	 -fx-font-weight: bold;
-	
+	-fx-font-family: 'ArcadeClassic';
+	-fx-font-weight: bold;
 }
 
-#VBOX{
-	 -fx-background-image: url("../../img/background/montagnes.png");
-	 /*-fx-background-size: contain;*/
-	 /*-fx-background-repeat: no-repeat;*/
-	 -fx-background-size: stretch;
-	 
+#VBOX {
+	-fx-background-image: url("../../img/background/montagnes.png");
+	-fx-background-size: stretch;
 }
 
-#vboxfils{
-	 -fx-font-size: 99px;
-	 /*-fx-text-fill: #b1eb54 ;  ne veut pas marcher */
+#vboxfils {
+	-fx-font-size: 99px;
 }
  
-#lb1
-{
-	-fx-text-fill: #b1eb54 ;
-}
-
-#lb2
-{
-	-fx-text-fill: #b1eb54 ;
-}
-
-#lb3
-{
-	-fx-text-fill: #b1eb54 ;
+#lb1, #lb2, #lb3 {
+	-fx-text-fill: #66ff66;
 }
 	  
 .button{
-	-fx-text-fill: #ebb434 ;
-	 /*-fx-font-weight: bold;*/
-	 -fx-font-size: 31px;
-	  -fx-background-color: transparent;
+	-fx-text-fill: #ffff00;
+	-fx-font-size: 31px;
+	-fx-background-color: transparent;
 }
 
-.button:hover{
-	/*-fx-cursor: crosshair  ;*/
-	-fx-cursor: hand ;
+.button:hover {
+	-fx-cursor: hand;
 	-fx-background-color: #ebdde6;
 }
