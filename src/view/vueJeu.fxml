@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane fx:id="gridRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/vueJeu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.JeuController">
+<GridPane fx:id="_gridRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="gridRoot" stylesheets="@../style/vueJeu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.JeuController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="239.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="630.0" minWidth="10.0" prefWidth="580.0" />
@@ -27,11 +27,11 @@
       <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label styleClass="resultLabel" text="La couleur peut etre modifiee" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+      <Label fx:id="_lResultat" styleClass="resultLabel" text="Debut   !   Cliquez   a   gauche   !" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <padding>
             <Insets left="5.0" right="5.0" top="2.0" />
          </padding></Label>
-      <Label styleClass="playerName" text="Pseudo" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+      <Label fx:id="_lPseudo" styleClass="playerName" text="Pseudo" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
          <padding>
             <Insets left="5.0" right="5.0" top="2.0" />
          </padding></Label>
@@ -39,11 +39,11 @@
          <padding>
             <Insets left="5.0" right="5.0" top="2.0" />
          </padding></Label>
-      <Label styleClass="score" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-      <Label styleClass="score" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+      <Label fx:id="_lScoreJ" styleClass="score" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+      <Label fx:id="_lScoreO" styleClass="score" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
       <HBox fx:id="hbox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="64.0" prefWidth="229.0" spacing="10.0" styleClass="menuBar" GridPane.rowIndex="1">
          <children>
-            <Button minWidth="10.0" mnemonicParsing="false">
+            <Button minWidth="10.0" mnemonicParsing="false" onAction="#nouvPartieHandler">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -52,7 +52,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false">
+            <Button mnemonicParsing="false" onAction="#optionsHandler">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -64,7 +64,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false">
+            <Button mnemonicParsing="false" onAction="#contactsHandler">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -73,7 +73,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false">
+            <Button mnemonicParsing="false" onAction="#exitHandler">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -96,7 +96,7 @@
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="276.0" prefWidth="102.0" spacing="10.0" styleClass="selectionBar" GridPane.rowIndex="3">
          <children>
             <Label styleClass="clickLabel" text="Cliquez" />
-            <Button mnemonicParsing="false">
+            <Button fx:id="_bPierre" mnemonicParsing="false" onAction="#choixBouton">
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -105,7 +105,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false">
+            <Button fx:id="_bFeuille" mnemonicParsing="false" onAction="#choixBouton">
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -114,7 +114,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false">
+            <Button fx:id="_bCiseaux" mnemonicParsing="false" onAction="#choixBouton">
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -131,16 +131,8 @@
             <Insets />
          </opaqueInsets>
       </VBox>
-      <ImageView fitHeight="258.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-         <image>
-            <Image url="@../../img/icon/right-facing-fist_1f91c.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="258.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-         <image>
-            <Image url="@../../img/icon/left-facing-fist_1f91b.png" />
-         </image>
-      </ImageView>
+      <ImageView fx:id="_imgvJoueur" fitHeight="258.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+      <ImageView fx:id="_imgvOrdi" fitHeight="258.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
    </children>
    <opaqueInsets>
       <Insets />

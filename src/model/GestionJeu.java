@@ -1,4 +1,5 @@
 package model;
+
 import java.util.Random;
 
 public class GestionJeu {
@@ -27,7 +28,7 @@ public class GestionJeu {
 	///////////////////////////////////////////////////////////////////////////////////////////////
     //Constructeur
 	///////////////////////////////////////////////////////////////////////////////////////////////
-    GestionJeu() {
+    public GestionJeu() {
     	this._maxPointsGagnants = 10;
     	this._nombreJoueur = 0;
     	this._nombreOrdi = 0;

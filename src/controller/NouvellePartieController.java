@@ -1,37 +1,20 @@
 package controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 
 public class NouvellePartieController {
 
-	@FXML private RadioButton _button;
-	
-	@FXML private boolean estSelect=false;
-	
-	@FXML public void selection(ActionEvent e)
-	{
-		if(_button.isSelected())
-		{
-			estSelect = true;
-			
-		}
-		else {
-			estSelect=false;
-			
-		}
+	@FXML
+	private RadioButton _button;
+
+	public Boolean buttonOK() {
+
+		return _button.isSelected();
 	}
-	
-	public Boolean buttonOK()
-	{
-		
-		return estSelect;
-	}
-	
-	public Boolean buttonCancel()
-	{
+
+	public Boolean buttonCancel() {
 		return false;
 	}
-	
+
 }

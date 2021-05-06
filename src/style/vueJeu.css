@@ -44,7 +44,7 @@
 	-fx-background-color: #4472C4;
 }
 
-#gridRoot {
+.gridRoot {
 	-fx-background-image: url("../../img/background/0.jpg");
 	-fx-background-size: stretch;
 }
