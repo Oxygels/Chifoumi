@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 import application.Main;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,24 +12,36 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import utils.ApplicationOption;
 import utils.IStylizable;
 
 public class MenuController implements IStylizable {
 
-	private boolean resizable = true;
+	@FXML
+	private Label _lPierre;
+	@FXML
+	private Label _lFeuille;
+	@FXML
+	private Label _lCiseaux;
+	@FXML
+	private Button _bNouvPartie;
+	@FXML
+	private Button _bOptions;
+	@FXML
+	private Button _bAide;
+	@FXML
+	private Button _bQuitter;
 
 	public MenuController() {
 
-	}
-
-	public MenuController(boolean resize) {
-		resizable = resize;
 	}
 
 	@FXML
@@ -44,6 +57,7 @@ public class MenuController implements IStylizable {
 			NouvellePartieController nvp = new NouvellePartieController();
 			loader.setController(nvp);
 			grille = loader.load();
+			nvp.updateStyle();
 			dialog.getDialogPane().setContent(grille);
 			ButtonType buttonTypeOk = new ButtonType("OK", ButtonData.OK_DONE);
 			ButtonType buttonTypeAnnuler = new ButtonType("Annuler", ButtonData.CANCEL_CLOSE);
@@ -71,7 +85,7 @@ public class MenuController implements IStylizable {
 					GridPane root = fxmlLoader.load();
 					scene.setRoot(root);
 					controll.updateStyle();
-					if (resizable && !Main.appOption.isFullscreen()) {
+					if (!Main.appOption.isFullscreen()) {
 						((Stage) scene.getWindow()).setHeight(Main.appOption.getResolutionH());
 						((Stage) scene.getWindow()).setWidth(Main.appOption.getResolutionW());
 					}
@@ -100,6 +114,7 @@ public class MenuController implements IStylizable {
 			OptionsController ctrl = new OptionsController();
 			loader.setController(ctrl);
 			grille = loader.load();
+			ctrl.updateStyle();
 			dialog.getDialogPane().setContent(grille);
 			ButtonType buttonTypeOk = new ButtonType("OK", ButtonData.OK_DONE);
 			ButtonType buttonTypeAnnuler = new ButtonType("Annuler", ButtonData.CANCEL_CLOSE);
@@ -162,11 +177,48 @@ public class MenuController implements IStylizable {
 		dialog.setHeaderText("Quitter le jeu");
 		dialog.setContentText("Voulez-vous vraiment quitter le jeu ?\nToute progression ne sera pas sauvegardée");
 		ButtonType cancelButton = new ButtonType("Annuler", ButtonData.CANCEL_CLOSE);
-		dialog.showAndWait().filter(button -> button == ButtonType.OK).ifPresent(response -> System.exit(0));
+		dialog.showAndWait().filter(button -> button == ButtonType.OK).ifPresent(response -> Platform.exit());
 	}
 
 	@Override
 	public void updateStyle() {
+		ApplicationOption options = Main.appOption;
+		Stage stage = ((Stage) _lPierre.getScene().getWindow());
+		boolean isFull = options.isFullscreen();
+		stage.setFullScreen(isFull);
+		if (!isFull) {
+			stage.setHeight(options.getResolutionH());
+			stage.setWidth(options.getResolutionW());
+		}
 
+		switch (options.getFontSize()) {
+		case Petit:
+			_lCiseaux.setStyle("-fx-font-size: 80.0px");
+			_lFeuille.setStyle("-fx-font-size: 80.0px");
+			_lPierre.setStyle("-fx-font-size: 80.0px");
+			_bAide.setStyle("-fx-font-size: 20.0px");
+			_bNouvPartie.setStyle("-fx-font-size: 20.0px");
+			_bOptions.setStyle("-fx-font-size: 20.0px");
+			_bQuitter.setStyle("-fx-font-size: 20.0px");
+			break;
+		case Moyen:
+			_lCiseaux.setStyle("-fx-font-size: 90.0px");
+			_lFeuille.setStyle("-fx-font-size: 90.0px");
+			_lPierre.setStyle("-fx-font-size: 90.0px");
+			_bAide.setStyle("-fx-font-size: 25.0px");
+			_bNouvPartie.setStyle("-fx-font-size: 25.0px");
+			_bOptions.setStyle("-fx-font-size: 25.0px");
+			_bQuitter.setStyle("-fx-font-size: 25.0px");
+			break;
+		default:
+			_lCiseaux.setStyle("-fx-font-size: 100.0px");
+			_lFeuille.setStyle("-fx-font-size: 100.0px");
+			_lPierre.setStyle("-fx-font-size: 100.0px");
+			_bAide.setStyle("-fx-font-size: 30.0px");
+			_bNouvPartie.setStyle("-fx-font-size: 30.0px");
+			_bOptions.setStyle("-fx-font-size: 30.0px");
+			_bQuitter.setStyle("-fx-font-size: 30.0px");
+			break;
+		}
 	}
 }

@@ -19,18 +19,18 @@
    <children>
       <VBox alignment="CENTER" prefHeight="166.0" prefWidth="598.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="339.0" styleClass="titre" text="NOUVELLE">
+            <Label fx:id="_lNouvelle" alignment="CENTER" contentDisplay="CENTER" prefWidth="339.0" styleClass="titre" text="NOUVELLE">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin></Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" styleClass="titre" text="PARTIE" />
+            <Label fx:id="_lPartie" alignment="CENTER" contentDisplay="CENTER" styleClass="titre" text="PARTIE" />
          </children>
       </VBox>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="vboxJoueurVSORdi" GridPane.rowIndex="1">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" styleClass="joueur" text="JOUEUR" />
-            <Label alignment="CENTER" contentDisplay="CENTER" styleClass="vs" text="VS" />
-            <Label alignment="CENTER" contentDisplay="CENTER" styleClass="ordi" text="ORDI" />
+            <Label fx:id="_lJoueur" alignment="CENTER" contentDisplay="CENTER" styleClass="joueur" text="JOUEUR" />
+            <Label fx:id="_lVS" alignment="CENTER" contentDisplay="CENTER" styleClass="vs" text="VS" />
+            <Label fx:id="_lOrdi" alignment="CENTER" contentDisplay="CENTER" styleClass="ordi" text="ORDI" />
             <RadioButton fx:id="_button" contentDisplay="CENTER" mnemonicParsing="false" selected="true" styleClass="radio" />
          </children>
          <GridPane.margin>

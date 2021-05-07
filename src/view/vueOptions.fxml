@@ -18,7 +18,7 @@
     <RowConstraints maxHeight="386.0" minHeight="10.0" prefHeight="383.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label styleClass="options" text="OPTIONS" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+      <Label fx:id="_lOptions" styleClass="options" text="OPTIONS" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <GridPane.margin>
             <Insets top="20.0" />
          </GridPane.margin>
@@ -37,37 +37,37 @@
             <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label styleClass="texte" text="PSEUDONYME">
+            <Label fx:id="_lPseudo" styleClass="texte" text="PSEUDONYME">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <Label styleClass="texte" text="RESOLUTION" GridPane.rowIndex="1">
+            <Label fx:id="_lResolution" styleClass="texte" text="RESOLUTION" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <Label styleClass="texte" text="PLEIN   ECRAN" GridPane.rowIndex="2">
+            <Label fx:id="_lFullscreen" styleClass="texte" text="PLEIN   ECRAN" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <Label styleClass="texte" text="THEME   DE   FOND" GridPane.rowIndex="3">
+            <Label fx:id="_lBackground" styleClass="texte" text="THEME   DE   FOND" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <Label styleClass="texte" text="TAILLE   DU   TEXTE" GridPane.rowIndex="4">
+            <Label fx:id="_lFontSize" styleClass="texte" text="TAILLE   DU   TEXTE" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <Label styleClass="texte" text="NOMBRE   DE   MANCHES" GridPane.rowIndex="5">
+            <Label fx:id="_lMaxWRound" styleClass="texte" text="NOMBRE   DE   MANCHES" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <TextArea fx:id="_taPseudo" prefHeight="200.0" prefWidth="200.0" styleClass="textArea" text="PSEUDO" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+            <TextArea fx:id="_taPseudo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="238.0" styleClass="textArea" text="PSEUDO" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets bottom="15.0" left="5.0" right="5.0" top="10.0" />
                </GridPane.margin>

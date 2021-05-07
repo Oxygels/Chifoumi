@@ -13,7 +13,7 @@
 }
 
 #vboxfils1 {
-     -fx-font-size: 99.0px;
+     -fx-font-size: 100.0px;
 }
  
 #lb1, #lb2, #lb3 {
@@ -22,7 +22,7 @@
       
 .button {
     -fx-text-fill: #ffff00;
-    -fx-font-size: 31.0px;
+    -fx-font-size: 30.0px;
     -fx-background-color: transparent;
 }
 

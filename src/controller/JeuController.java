@@ -26,7 +26,6 @@ import utils.IStylizable;
 
 public class JeuController implements IStylizable {
 	private MenuController _menuC;
-	private GestionJeu _jeu;
 
 	// ================ Gridpane
 	@FXML
@@ -75,9 +74,9 @@ public class JeuController implements IStylizable {
 
 	public JeuController() {
 		ApplicationOption options = Main.appOption;
-		_menuC = new MenuController(false);
-		_jeu = new GestionJeu();
-		_jeu.set_maxPointsGagnants(options.getMaxWRound());
+		_menuC = new MenuController();
+		Main.jeu.Init();
+		Main.jeu.set_maxPointsGagnants(options.getMaxWRound());
 
 		_imgCiseaux = new Image("file:img/icon/ciseaux.png", true);
 		_imgPierreJ = new Image("file:img/icon/pierreJ.png", true);
@@ -85,13 +84,13 @@ public class JeuController implements IStylizable {
 		_imgFeuilleJ = new Image("file:img/icon/feuilleJ.png", true);
 		_imgFeuilleO = new Image("file:img/icon/feuilleO.png", true);
 
-		
 		_bgStyle = options.getBgStyle();
 	}
-	
-	@FXML private void initialize() {
+
+	@FXML
+	private void initialize() {
 		ApplicationOption options = Main.appOption;
-		int roll = _jeu.get_alea().nextInt(3);
+		int roll = Main.jeu.get_alea().nextInt(3);
 		switch (options.getBgStyle()) {
 		case Asiatique:
 			_gridRoot.setStyle("-fx-background-image: url(\"file:img/background/as" + roll + ".jpg\");");
@@ -110,18 +109,18 @@ public class JeuController implements IStylizable {
 		Button receiver = (Button) e.getSource();
 		if (receiver == _bPierre) {
 			_imgvJoueur.setImage(_imgPierreJ);
-			_jeu.set_nombreJoueur(0);
+			Main.jeu.set_nombreJoueur(0);
 		} else if (receiver == _bCiseaux) {
 			_imgvJoueur.setImage(_imgCiseaux);
-			_jeu.set_nombreJoueur(1);
+			Main.jeu.set_nombreJoueur(1);
 		} else {
 			_imgvJoueur.setImage(_imgFeuilleJ);
-			_jeu.set_nombreJoueur(2);
+			Main.jeu.set_nombreJoueur(2);
 		}
 
-		_jeu.ChoixOrdinateur();
+		Main.jeu.ChoixOrdinateur();
 
-		switch (_jeu.get_nombreOrdi()) {
+		switch (Main.jeu.get_nombreOrdi()) {
 		case 0:
 			_imgvOrdi.setImage(_imgPierreO);
 			break;
@@ -133,11 +132,11 @@ public class JeuController implements IStylizable {
 			break;
 		}
 
-		int res = _jeu.CaculerPoints();
+		int res = Main.jeu.CaculerPoints();
 		updateLabel(res);
 
-		_lScoreJ.setText(String.valueOf(_jeu.get_pointsJoueur()));
-		_lScoreO.setText(String.valueOf(_jeu.get_pointsOrdi()));
+		_lScoreJ.setText(String.valueOf(Main.jeu.get_pointsJoueur()));
+		_lScoreO.setText(String.valueOf(Main.jeu.get_pointsOrdi()));
 		verifGagnant(e);
 
 	}
@@ -163,12 +162,12 @@ public class JeuController implements IStylizable {
 	}
 
 	private void verifGagnant(ActionEvent e) {
-		if (_jeu.Gagnant()) {
+		if (Main.jeu.Gagnant()) {
 			Scene scene = (Scene) ((Button) e.getSource()).getScene();
 			try {
 
-				if (_jeu.JoueurGagne()) {
-					FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/vueVictoire.fxml"));
+				if (Main.jeu.JoueurGagne()) {
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/vueVictoire.fxml"));
 					VictoireController ctrl = new VictoireController();
 					loader.setController(ctrl);
 					Parent root = loader.load();
@@ -176,14 +175,14 @@ public class JeuController implements IStylizable {
 					ctrl.updateStyle();
 
 				} else {
-					FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/vueGameOver.fxml"));
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/vueGameOver.fxml"));
 					GameOverController ctrl = new GameOverController();
 					loader.setController(ctrl);
 					Parent root = loader.load();
 					scene.setRoot(root);
 					ctrl.updateStyle();
 				}
-				
+
 			} catch (Exception except) {
 				except.printStackTrace();
 			}
@@ -237,8 +236,8 @@ public class JeuController implements IStylizable {
 	@Override
 	public void updateStyle() {
 		ApplicationOption options = Main.appOption;
-		_lPseudo.setText(options.getPseudo());
-		((Stage) _lPseudo.getScene().getWindow()).setFullScreen(options.isFullscreen());
+		Main.jeu.set_Pseudo(options.getPseudo());
+		_lPseudo.setText(Main.jeu.get_Pseudo());
 
 		switch (options.getFontSize()) {
 		case Moyen:
@@ -267,21 +266,23 @@ public class JeuController implements IStylizable {
 
 		}
 		// TODO: Rajouter alert changement de nbre de manche
-		if (_jeu.get_maxPointsGagnants() != options.getMaxWRound()) {
+		if (Main.jeu.get_maxPointsGagnants() != options.getMaxWRound()) {
 			Alert dialog = new Alert(AlertType.CONFIRMATION);
 			dialog.setHeaderText("Changement important détecté");
 			dialog.setContentText(
 					"Le nombre de manches maximales a été modifié, le changement sera effectué à  la prochaine partie.\n"
 							+ "Annuler ignorera uniquement ce changement, les autres modifications seront appliquées.");
 			ButtonType cancelButton = new ButtonType("Annuler", ButtonData.CANCEL_CLOSE);
+
 			dialog.showAndWait().ifPresent(button -> {
 				if (button == ButtonType.CANCEL)
-					options.setMaxWRound(_jeu.get_maxPointsGagnants());
+					options.setMaxWRound(Main.jeu.get_maxPointsGagnants());
 			});
 		}
 
 		if (options.getBgStyle() != _bgStyle) {
-			int roll = _jeu.get_alea().nextInt(3);
+			_bgStyle = options.getBgStyle();
+			int roll = Main.jeu.get_alea().nextInt(3);
 			switch (options.getBgStyle()) {
 			case Asiatique:
 				_gridRoot.setStyle("-fx-background-image: url(\"file:img/background/as" + roll + ".jpg\");");
@@ -293,6 +294,13 @@ public class JeuController implements IStylizable {
 				_gridRoot.setStyle("-fx-background-image: url(\"file:img/background/zen" + roll + ".jpg\");");
 				break;
 			}
+		}
+		Stage stage = ((Stage) _lPseudo.getScene().getWindow());
+		boolean isFull = options.isFullscreen();
+		stage.setFullScreen(isFull);
+		if (!isFull) {
+			stage.setHeight(options.getResolutionH());
+			stage.setWidth(options.getResolutionW());
 		}
 
 	}

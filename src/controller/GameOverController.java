@@ -12,9 +12,10 @@ public class GameOverController implements IStylizable {
 
 	@FXML
 	private Label _lGameOver;
-	MenuController menuC = new MenuController(false);
+	MenuController menuC = new MenuController();
 
-	public void initialize() {
+	@FXML
+	private void initialize() {
 
 	}
 
@@ -53,6 +54,12 @@ public class GameOverController implements IStylizable {
 			_lGameOver.setStyle("-fx-font-size: 150px");
 			break;
 		}
-		((Stage) _lGameOver.getScene().getWindow()).setFullScreen(options.isFullscreen());
+		Stage stage = ((Stage) _lGameOver.getScene().getWindow());
+		boolean isFull = options.isFullscreen();
+		stage.setFullScreen(isFull);
+		if (!isFull) {
+			stage.setHeight(options.getResolutionH());
+			stage.setWidth(options.getResolutionW());
+		}
 	}
 }

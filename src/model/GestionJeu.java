@@ -2,6 +2,8 @@ package model;
 
 import java.util.Random;
 
+import application.Main;
+
 public class GestionJeu {
 	
 	//Points de l'ordinateur
@@ -22,7 +24,7 @@ public class GestionJeu {
 	//générateur de nombre aléatoire
 	private Random _alea; 
 
-
+	private String _pseudo = "PSEUDO";
 
     
 	///////////////////////////////////////////////////////////////////////////////////////////////
@@ -42,7 +44,14 @@ public class GestionJeu {
     //Les accesseurs/modifieurs de données membres
 	///////////////////////////////////////////////////////////////////////////////////////////////
 
-	/**
+	public void set_Pseudo(String pseudo) {
+		_pseudo = pseudo;
+	}
+	
+	public String get_Pseudo() {
+		return _pseudo;
+	}
+    /**
 	 * @return the _pointsOrdi
 	 */
 	public int get_pointsOrdi() {

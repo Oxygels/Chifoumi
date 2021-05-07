@@ -10,13 +10,15 @@ import utils.IStylizable;
 
 public class VictoireController implements IStylizable {
 
-	@FXML private Label _lVictoire;
-	
-	public void initialize() {
+	@FXML
+	private Label _lVictoire;
+
+	@FXML
+	private void initialize() {
 
 	}
 
-	MenuController menuC = new MenuController(false);
+	MenuController menuC = new MenuController();
 
 	@FXML
 	public void newGame(ActionEvent e) {
@@ -43,8 +45,7 @@ public class VictoireController implements IStylizable {
 	@Override
 	public void updateStyle() {
 		ApplicationOption options = Main.appOption;
-		switch(options.getFontSize())
-		{
+		switch (options.getFontSize()) {
 		case Petit:
 			_lVictoire.setStyle("-fx-font-size: 100px");
 			break;
@@ -55,7 +56,14 @@ public class VictoireController implements IStylizable {
 			_lVictoire.setStyle("-fx-font-size: 150px");
 			break;
 		}
-		((Stage) _lVictoire.getScene().getWindow()).setFullScreen(options.isFullscreen());
+		Stage stage = ((Stage) _lVictoire.getScene().getWindow());
+		boolean isFull = options.isFullscreen();
+		stage.setFullScreen(isFull);
+		if (!isFull) {
+			stage.setHeight(options.getResolutionH());
+			stage.setWidth(options.getResolutionW());
+		}
+
 	}
 
 }
