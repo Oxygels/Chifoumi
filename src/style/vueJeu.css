@@ -23,7 +23,7 @@
 }
 
 .score {
-	-fx-font-size: 100px;
+	-fx-font-size: 90px;
 	-fx-background-color: rgba(96, 100, 136, 0.5); 
     -fx-border-color: #ffff00;
     -fx-border-style: dashed;

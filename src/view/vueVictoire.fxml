@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="892.0" styleClass="VBOX" stylesheets="@../style/vueVictoire.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VictoireController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="892.0" styleClass="VBOX" stylesheets="@../style/vueVictoire.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox maxHeight="48.0" prefHeight="48.0" prefWidth="892.0">
          <children>
@@ -67,7 +67,7 @@
             </GridPane>
          </children>
       </HBox>
-      <Label styleClass="lb1" text="VICTOIRE">
+      <Label fx:id="_lVictoire" styleClass="lb1" text="VICTOIRE">
          <VBox.margin>
             <Insets top="150.0" />
          </VBox.margin>

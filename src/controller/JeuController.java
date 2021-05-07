@@ -1,7 +1,5 @@
 package controller;
 
-import java.io.File;
-
 import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -168,15 +166,24 @@ public class JeuController implements IStylizable {
 		if (_jeu.Gagnant()) {
 			Scene scene = (Scene) ((Button) e.getSource()).getScene();
 			try {
-				Parent root;
 
 				if (_jeu.JoueurGagne()) {
-					root = FXMLLoader.load(getClass().getResource("/view/vueVictoire.fxml"));
+					FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/vueVictoire.fxml"));
+					VictoireController ctrl = new VictoireController();
+					loader.setController(ctrl);
+					Parent root = loader.load();
+					scene.setRoot(root);
+					ctrl.updateStyle();
 
 				} else {
-					root = FXMLLoader.load(getClass().getResource("/view/vueGameOver.fxml"));
+					FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/vueGameOver.fxml"));
+					GameOverController ctrl = new GameOverController();
+					loader.setController(ctrl);
+					Parent root = loader.load();
+					scene.setRoot(root);
+					ctrl.updateStyle();
 				}
-				scene.setRoot(root);
+				
 			} catch (Exception except) {
 				except.printStackTrace();
 			}
@@ -231,7 +238,6 @@ public class JeuController implements IStylizable {
 	public void updateStyle() {
 		ApplicationOption options = Main.appOption;
 		_lPseudo.setText(options.getPseudo());
-		// Care labels aren't visible anymore
 		((Stage) _lPseudo.getScene().getWindow()).setFullScreen(options.isFullscreen());
 
 		switch (options.getFontSize()) {
@@ -255,8 +261,8 @@ public class JeuController implements IStylizable {
 			_lPseudo.setStyle("-fx-font-size: 40px;");
 			_lOrdi.setStyle("-fx-font-size: 40px;");
 			_lResultat.setStyle("-fx-font-size: 40px;");
-			_lScoreJ.setStyle("-fx-font-size: 100px;");
-			_lScoreO.setStyle("-fx-font-size: 100px;");
+			_lScoreJ.setStyle("-fx-font-size: 90px;");
+			_lScoreO.setStyle("-fx-font-size: 90px;");
 			break;
 
 		}
