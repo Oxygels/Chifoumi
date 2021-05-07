@@ -1,6 +1,7 @@
 @font-face {
 	src: url("../../fonts/arcade.ttf");
 }
+
 .label {
 	-fx-font-size: 40px;
 	-fx-font-family: 'ArcadeClassic';
@@ -15,6 +16,7 @@
 	-fx-background-image: url('../../img/icon/button_bg.png');
 	-fx-background-size: stretch;
 }
+
 .menuBar, .selectionBar {
 	-fx-background-color: linear-gradient(to bottom right, white , lightgrey 80%); 
 	-fx-border-color: black;
@@ -48,6 +50,5 @@
 }
 
 .gridRoot {
-
 	-fx-background-size: stretch;
 }

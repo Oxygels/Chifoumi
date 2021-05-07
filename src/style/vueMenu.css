@@ -2,18 +2,17 @@
     src: url("../../fonts/arcade.ttf");
 }
 
-.label , .button{
+.label , .button {
     -fx-font-family: 'ArcadeClassic';
     -fx-font-weight: bold;
 }
 
-.myGrid{
+.myGrid {
      -fx-background-image: url("../../img/background/montagnes.png");
      -fx-background-size: stretch; 
 }
 
-#vboxfils1
-{
+#vboxfils1 {
      -fx-font-size: 99.0px;
 }
  
@@ -21,7 +20,7 @@
     -fx-text-fill: #66ff66;
 }
       
-.button{
+.button {
     -fx-text-fill: #ffff00;
     -fx-font-size: 31.0px;
     -fx-background-color: transparent;
@@ -29,5 +28,5 @@
 
 .button:hover {
     -fx-cursor: hand;
-    -fx-background-color: #ebdde6;
+    -fx-background-color: #2e769b;
 }

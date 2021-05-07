@@ -11,19 +11,25 @@
 	-fx-background-size: stretch;
 }
 
-.contact {
+.aide {
 	-fx-font-size: 55px;
 	-fx-text-fill: #ffff00;
 	-fx-font-family: 'Arcade Classic';
 }
 
-.numeroDuSupport, .num {
+.reglesTitre, .numeroDuSupport {
 	-fx-font-size: 30px;
 	-fx-text-fill: #ff8000;
 	-fx-font-family: 'ArcadeClassic';
 }
 
-.num {
+.regle, .num {
+	-fx-font-size: 25px;
+	-fx-text-fill: #ff8000;
+	-fx-font-family: 'ArcadeClassic';
+}
+
+.regles, .num {
 	-fx-background-color: rgba(96, 100, 136, 0.5); 
     -fx-border-color: #ffff00;
     -fx-border-style: dashed;
